@@ -1,0 +1,20 @@
+name: Calculate p_23.lua SHA256
+
+on:
+  push:
+    paths:
+      - "p_23.lua"
+  workflow_dispatch:
+
+jobs:
+  sha256:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Calculate SHA256
+        run: |
+          echo "SHA256 p_23.lua:"
+          sha256sum p_23.lua
