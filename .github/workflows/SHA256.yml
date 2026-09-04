@@ -1,0 +1,17 @@
+name: SHA256
+
+on:
+  push:
+    paths:
+      - "p_23.lua"
+  workflow_dispatch:
+
+jobs:
+  SHA256:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: SHA256
+        run: sha256sum p_23.lua
